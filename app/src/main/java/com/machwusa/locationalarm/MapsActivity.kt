@@ -1,7 +1,9 @@
 package com.machwusa.locationalarm
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -36,8 +38,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap = googleMap
 
         // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        val rusty = LatLng(-25.6489338,27.1834966)
+       // val sydney = LatLng(-34.0, 151.0)
+        mMap.addMarker(MarkerOptions().position(rusty).title("Marker in Rustenburg"))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(rusty))
     }
+
+    fun onClickSettingsButton(view: View) {
+        val intent = Intent("android.intent.action.SETTINGACTIVITY")
+        startActivity(intent) }
 }
